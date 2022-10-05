@@ -5,7 +5,9 @@ var indexChangeMode = 0
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textLabelSizeField: UILabel!
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var segmentSizeField: UISegmentedControl!
 
     override func viewDidLoad() {
         print("ViewDidLoad")
@@ -17,6 +19,7 @@ class SettingsViewController: UIViewController {
             segment.selectedSegmentIndex = selectedIndex
         }
         textLabel.text = "Selected mode: " + (segment.titleForSegment(at: segment.selectedSegmentIndex) ?? "")
+        textLabelSizeField.text = "Size field: " + (segmentSizeField.titleForSegment(at: segmentSizeField.selectedSegmentIndex) ?? "")
     }
 
     @IBAction func changeGameMode(_ sender: AnyObject) {

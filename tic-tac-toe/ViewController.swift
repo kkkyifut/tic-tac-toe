@@ -82,8 +82,9 @@ class ViewController: UIViewController {
                 self.triggerAI = false
             }
             if textModeOnMain == modeDemo {
-                self.view.isUserInteractionEnabled = false
-                self.triggerAI = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    self.checkMode()
+                }
             }
             return
         }
